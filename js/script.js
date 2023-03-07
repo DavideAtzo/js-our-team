@@ -38,13 +38,20 @@ const team = [
         role: 'Graphic Designer',
         photo: 'barbara-ramos-graphic-designer.jpg',
     },
-]
+];
 
-    for (const key in team) {
-        console.log({team});
-    }
+const row = document.querySelector('row');
+    
 
+function creaCasella(tagElement, className, name, role, photo) {
+    const element = document.createElement(tagElement);
+    element.classList.add(className);
+    element.innerText = name;
+    element.innerText = role;
+    element.innerText = photo;
+    return element;
+}
 
-
-
-
+for (const key in team) {
+    console.log(team[key])
+}
