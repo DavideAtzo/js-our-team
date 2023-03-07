@@ -7,6 +7,14 @@
 // Scott Estrada	Developer	scott-estrada-developer.jpg
 // Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 
+function creaElemento(tagElement, className, objet) {
+    const element = document.createElement(tagElement);
+    element.classList.add(className);
+    element.innerText = objet;
+    return element;
+}
+
+
 const team = [
     {
         name: 'Wayne Barnett',
@@ -42,16 +50,7 @@ const team = [
 
 const row = document.querySelector('row');
     
-
-function creaCasella(tagElement, className, name, role, photo) {
-    const element = document.createElement(tagElement);
-    element.classList.add(className);
-    element.innerText = name;
-    element.innerText = role;
-    element.innerText = photo;
-    return element;
-}
-
 for (const key in team) {
     console.log(team[key])
 }
+
