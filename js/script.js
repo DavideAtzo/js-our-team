@@ -7,13 +7,14 @@
 // Scott Estrada	Developer	scott-estrada-developer.jpg
 // Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 
-function creaElemento(tagElement, className, objet) {
+function creaElemento(tagElement, className, name, role, photo) {
     const element = document.createElement(tagElement);
     element.classList.add(className);
-    element.innerText = objet;
+    element.innerText = name;
+    element.innerText = role;
+    element.innerText = photo;
     return element;
 }
-
 
 const team = [
     {
@@ -48,9 +49,18 @@ const team = [
     },
 ];
 
-const row = document.querySelector('row');
-    
-for (const key in team) {
-    console.log(team[key])
-}
+const row = document.querySelector('.row');
+console.log(row)
 
+for (let i = 0; i < team.length; i++) {
+    const memberTeam = team[i];
+    for (let key in memberTeam) {
+        const card = creaElemento('div', 'col-4');
+        // console.log(key + ':  ' + );
+        card.innerText = `${memberTeam[key]}`; 
+        // card.innerText = `${memberTeam.role}`;
+        // card.innerText = `${memberTeam.role}`;
+        row.append(card);
+    }
+    console.log('');
+}
