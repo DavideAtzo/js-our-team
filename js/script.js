@@ -1,12 +1,6 @@
 'use strict';
 
-// Wayne Barnett	Founder & CEO	wayne-barnett-founder-ceo.jpg
-// Angela Caroll	Chief Editor	angela-caroll-chief-editor.jpg
-// Walter Gordon	Office Manager	walter-gordon-office-manager.jpg
-// Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg
-// Scott Estrada	Developer	scott-estrada-developer.jpg
-// Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
-
+// creo funziona che mette insieme gli elementi 
 function creaElemento(tagElement, className, name, role, photo) {
     const element = document.createElement(tagElement);
     element.classList.add(className);
@@ -15,7 +9,7 @@ function creaElemento(tagElement, className, name, role, photo) {
     element.innerText = photo;
     return element;
 }
-
+// array del team con i suoi membri 
 const team = [
     {
         name: 'Wayne Barnett',
@@ -48,15 +42,14 @@ const team = [
         photo: 'barbara-ramos-graphic-designer.jpg',
     },
 ];
-
+// variabile che richiamo dall'html 
 const row = document.querySelector('.row');
-
+// ciclo che corre l'array del team e mi sovrascrive degli elementi 
 for (let i = 0; i < team.length; i++) {
     const card = creaElemento('div', 'col-4');
     const memberTeam = team[i];
-    
+    // ciclo che legge gli oggetti all'interno dell'array team 
     for (let key in memberTeam) {
-        // console.log(memberTeam[key]);
         card.innerText = `${memberTeam[key]}`; 
         row.append(card);
     }
