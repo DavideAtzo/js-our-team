@@ -48,11 +48,15 @@ const row = document.querySelector('.row');
 for (let i = 0; i < team.length; i++) {
     const card = creaElemento('div', 'col-4');
     const memberTeam = team[i];
+    
     // ciclo che legge gli oggetti all'interno dell'array team 
     for (let key in memberTeam) {
-        card.innerText = `${memberTeam[key]}`; 
+        card.innerText = `${memberTeam}`; 
+        // card.innerText = `${memberTeam[key]}`; 
         row.append(card);
+        console.log(memberTeam)
     }
-    console.log(memberTeam)
+    
 }
+
 
