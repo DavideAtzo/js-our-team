@@ -50,17 +50,16 @@ const team = [
 ];
 
 const row = document.querySelector('.row');
-console.log(row)
 
 for (let i = 0; i < team.length; i++) {
+    const card = creaElemento('div', 'col-4');
     const memberTeam = team[i];
+    
     for (let key in memberTeam) {
-        const card = creaElemento('div', 'col-4');
-        // console.log(key + ':  ' + );
+        // console.log(memberTeam[key]);
         card.innerText = `${memberTeam[key]}`; 
-        // card.innerText = `${memberTeam.role}`;
-        // card.innerText = `${memberTeam.role}`;
         row.append(card);
     }
-    console.log('');
+    console.log(memberTeam)
 }
+
