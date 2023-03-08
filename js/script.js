@@ -1,5 +1,12 @@
 'use strict';
 // array del team con i suoi membri 
+function creaElemento(tagElement, className, objet) {
+    const element = document.createElement(tagElement);
+    element.classList.add(className);
+    element.innerText = objet;
+    return element;
+}
+
 const team = [
     {
         name: 'Wayne Barnett',
@@ -35,18 +42,17 @@ const team = [
 // variabile che richiamo dall'html 
 const row = document.querySelector('.row');
 // ciclo che corre l'array del team e mi sovrascrive degli elementi 
-for (let i = 0; i < team.length; i++) {
-    const card = creaElemento('div', 'col-4');
-    const memberTeam = team[i];
-    
-    // ciclo che legge gli oggetti all'interno dell'array team 
-    for (let key in memberTeam) {
-        card.innerText = `${memberTeam}`; 
-        // card.innerText = `${memberTeam[key]}`; 
-        row.append(card);
-        console.log(memberTeam)
-    }
-    
-}
 
+
+// ciclo che legge gli oggetti all'interno dell'array team 
+for(let key in team){
+    let teamMember=(team[key]);
+    console.log(teamMember);
+        let name = team[key].name;
+        let role = team[key].role;
+        let img = team[key].photo;
+        let element = creaElemento('div','col-4',`${name} ${role} ${img}`);
+        row.append(element);
+        element.append(img);
+    };    
 
