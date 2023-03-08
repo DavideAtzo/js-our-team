@@ -1,14 +1,4 @@
 'use strict';
-
-// creo funziona che mette insieme gli elementi 
-function creaElemento(tagElement, className, name, role, photo) {
-    const element = document.createElement(tagElement);
-    element.classList.add(className);
-    element.innerText = name;
-    element.innerText = role;
-    element.innerText = photo;
-    return element;
-}
 // array del team con i suoi membri 
 const team = [
     {
